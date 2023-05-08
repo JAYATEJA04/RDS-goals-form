@@ -7,8 +7,10 @@ import {
   Text,
   SafeAreaView,
   ScrollView,
+  FlatList,
 } from 'react-native';
 import DropDown from './components/dropdown';
+import ModalView from './components/ModalView';
 
 const MainApp = () => {
   return (
@@ -45,7 +47,8 @@ const MainApp = () => {
         <Text style={styles.titles}>Duration</Text>
         <DropDown />
         <Text style={styles.titles}>DeadLine</Text>
-        <TextInput style={styles.inputStyle} placeholder="dd/mm/yyyy" />
+        {/* <TextInput style={styles.inputStyle} placeholder="dd/mm/yyyy" /> */}
+        <ModalView />
       </View>
     </SafeAreaView>
   );
@@ -60,7 +63,6 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 20,
     backgroundColor: 'white',
-    flexWrap: 'nowrap',
   },
   inputStyle: {
     padding: 5,
