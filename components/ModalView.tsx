@@ -20,16 +20,26 @@ const ModalView = () => {
         onPress={() => setShowModal(true)}>
         <Text style={styles.textStyle}>Open Calendar</Text>
       </TouchableOpacity>
-      <Modal visible={showmodal} animationType="fade">
-        <View style={styles.calendarStyle}>
-          <Calendar />
-          <TouchableOpacity
-            onPress={() => {
-              setShowModal(false);
-            }}
-            style={styles.calendarOpenStyle}>
-            <Text style={styles.calendarOpenTextStyle}>Close Calendar</Text>
-          </TouchableOpacity>
+
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={showmodal}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+          setShowModal(!showmodal);
+        }}>
+        <View style={styles.centeredView}>
+          <View style={styles.calendarStyle}>
+            <Calendar />
+            <TouchableOpacity
+              onPress={() => {
+                setShowModal(false);
+              }}
+              style={styles.calendarOpenStyle}>
+              <Text style={styles.calendarOpenTextStyle}>Close Calendar</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </Modal>
     </View>
@@ -50,8 +60,20 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   calendarStyle: {
-    elevation: 40,
-    margin: 40,
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 20,
+    borderWidth: 3,
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
   },
   calendarOpenStyle: {
     backgroundColor: 'grey',
@@ -64,6 +86,12 @@ const styles = StyleSheet.create({
   calendarOpenTextStyle: {
     color: 'white',
     fontSize: 15,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22,
   },
 });
 
