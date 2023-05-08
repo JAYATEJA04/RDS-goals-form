@@ -23,6 +23,13 @@ const ModalView = () => {
       <Modal visible={showmodal} animationType="fade">
         <View style={styles.calendarStyle}>
           <Calendar />
+          <TouchableOpacity
+            onPress={() => {
+              setShowModal(false);
+            }}
+            style={styles.calendarOpenStyle}>
+            <Text style={styles.calendarOpenTextStyle}>Close Calendar</Text>
+          </TouchableOpacity>
         </View>
       </Modal>
     </View>
@@ -40,11 +47,23 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color: 'white',
-    fontSize: 22,
+    fontSize: 15,
   },
   calendarStyle: {
     elevation: 40,
     margin: 40,
+  },
+  calendarOpenStyle: {
+    backgroundColor: 'grey',
+    borderRadius: 10,
+    margin: 40,
+    padding: 10,
+    width: 200,
+    alignItems: 'center',
+  },
+  calendarOpenTextStyle: {
+    color: 'white',
+    fontSize: 15,
   },
 });
 

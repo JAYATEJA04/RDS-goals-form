@@ -24,6 +24,7 @@ const MainApp = () => {
           paddingBottom: 40,
           height: 650,
           borderRadius: 20,
+          overflow: 'hidden',
         }}>
         <Text
           style={{
