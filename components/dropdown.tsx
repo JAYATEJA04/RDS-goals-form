@@ -4,19 +4,19 @@ import {
   Text,
   TouchableOpacity,
   FlatList,
-  ScrollView,
-  SafeAreaView,
+  // ScrollView,
+  // SafeAreaView,
 } from 'react-native';
 import React, {useState} from 'react';
-const countries = [
+const timeperiod = [
   {names: 'Short term'},
   {names: 'Mid term'},
   {names: 'Long term'},
 ];
 const DropDown = () => {
   const [clicked, setClicked] = useState(false);
-  const [data, setData] = useState(countries);
-  const [selectedCountry, setSelectedCountry] = useState('');
+  const [data, setData] = useState(timeperiod);
+  const [selectedTimePeriod, setSelectedTimePeriod] = useState('');
 
   return (
     <View>
@@ -39,7 +39,7 @@ const DropDown = () => {
           setClicked(!clicked);
         }}>
         <Text style={{fontWeight: '600', color: 'black'}}>
-          {selectedCountry === '' ? 'Select duration' : selectedCountry}
+          {selectedTimePeriod === '' ? 'Select duration' : selectedTimePeriod}
         </Text>
         {clicked ? (
           <Text style={{color: 'black', fontSize: 20}}>-</Text>
@@ -70,7 +70,7 @@ const DropDown = () => {
                   borderBottomWidth: 0.5,
                 }}
                 onPress={() => {
-                  setSelectedCountry(item.names);
+                  setSelectedTimePeriod(item.names);
                   setClicked(!clicked);
                 }}>
                 <Text style={{fontWeight: '600', color: 'black'}}>

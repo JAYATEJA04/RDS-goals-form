@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Calendar} from 'react-native-calendars';
 
-const App = () => {
+const CalendarView = () => {
   const [selected, setSelected] = useState('');
 
   return (
@@ -22,7 +22,6 @@ const App = () => {
         [selected]: {
           selected: true,
           disableTouchEvent: true,
-          selectedDotColor: 'orange',
         },
       }}
       // theme
@@ -40,4 +39,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default CalendarView;

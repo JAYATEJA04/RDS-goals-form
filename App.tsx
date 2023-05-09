@@ -14,7 +14,7 @@ import ModalView from './components/ModalView';
 
 const MainApp = () => {
   return (
-    <SafeAreaView style={[styles.container]}>
+    <SafeAreaView style={[styles.container, {overflow: 'scroll'}]}>
       <View
         style={{
           borderWidth: 3,
@@ -38,11 +38,13 @@ const MainApp = () => {
         <Text style={styles.titles}>Title</Text>
         <TextInput
           style={styles.inputStyle}
+          maxLength={50}
           placeholder="Enter title max of 50 characters."
         />
         <Text style={styles.titles}>Description</Text>
         <TextInput
           style={styles.inputStyle}
+          maxLength={200}
           placeholder="Enter max 200 characters."
         />
         <Text style={styles.titles}>Duration</Text>
@@ -69,6 +71,7 @@ const styles = StyleSheet.create({
     padding: 5,
     backgroundColor: 'silver',
     borderRadius: 5,
+    fontSize: 10,
   },
   titles: {
     fontSize: 15,
