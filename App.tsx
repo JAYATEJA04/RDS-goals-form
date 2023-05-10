@@ -6,8 +6,7 @@ import {
   TextInput,
   Text,
   SafeAreaView,
-  ScrollView,
-  FlatList,
+  TouchableOpacity,
 } from 'react-native';
 import DropDown from './components/dropdown';
 import Calendar2 from './components/calendar2';
@@ -50,9 +49,10 @@ const MainApp = () => {
         <Text style={styles.titles}>Duration</Text>
         <DropDown />
         <Text style={styles.titles}>DeadLine</Text>
-        {/* <TextInput style={styles.inputStyle} placeholder="dd/mm/yyyy" /> */}
-        {/* <ModalView /> */}
         <Calendar2 />
+        <TouchableOpacity style={styles.createButtonStyle}>
+          <Text style={styles.createButtonText}>Create</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -79,6 +79,20 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginTop: 20,
     color: 'black',
+  },
+  createButtonText: {
+    fontSize: 15,
+    color: 'white',
+    alignSelf: 'center',
+  },
+  createButtonStyle: {
+    borderWidth: 3,
+    padding: 10,
+    width: '50%',
+    alignSelf: 'center',
+    marginTop: 20,
+    borderRadius: 10,
+    backgroundColor: 'indigo',
   },
 });
 
