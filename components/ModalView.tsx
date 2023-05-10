@@ -8,7 +8,7 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import CalendarView from './calendar';
+import Calendar2 from './calendar2';
 
 const ModalView = () => {
   const [showmodal, setShowModal] = useState(false);
@@ -31,7 +31,8 @@ const ModalView = () => {
         }}>
         <View style={styles.centeredView}>
           <View style={styles.calendarStyle}>
-            <CalendarView />
+            {/* <CalendarView /> */}
+            <Calendar2 />
             <TouchableOpacity
               onPress={() => {
                 setShowModal(false);

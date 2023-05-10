@@ -10,7 +10,7 @@ import {
   FlatList,
 } from 'react-native';
 import DropDown from './components/dropdown';
-import ModalView from './components/ModalView';
+import Calendar2 from './components/calendar2';
 
 const MainApp = () => {
   return (
@@ -51,7 +51,8 @@ const MainApp = () => {
         <DropDown />
         <Text style={styles.titles}>DeadLine</Text>
         {/* <TextInput style={styles.inputStyle} placeholder="dd/mm/yyyy" /> */}
-        <ModalView />
+        {/* <ModalView /> */}
+        <Calendar2 />
       </View>
     </SafeAreaView>
   );
