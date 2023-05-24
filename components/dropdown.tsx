@@ -1,12 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  // ScrollView,
-  // SafeAreaView,
-} from 'react-native';
+import {View, Text, TouchableOpacity, FlatList, Linking} from 'react-native';
 import React, {useState} from 'react';
 const timeperiod = [
   {names: 'Short term'},
