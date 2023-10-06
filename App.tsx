@@ -1,47 +1,22 @@
-import React from 'react';
-import {
-  StyleSheet,
-  View,
-  TextInput,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  Linking,
-  Button,
-} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import MainScreen from './components/GoalsScreen';
+import React, {FC} from 'react';
+import {StyleSheet} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import Connection from './ScrollTabs/screen/Profile';
 
-const Stack = createNativeStackNavigator();
-
-function HomeScreen({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <TouchableOpacity
-        style={{
-          backgroundColor: 'orange',
-          padding: 10,
-          borderRadius: 20,
-          elevation: 5,
-        }}
-        onPress={() => navigation.navigate('Form screen')}>
-        <Text>Go to details</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
-
-const MainApp = () => {
-  return (
+const App: FC = () => (
+  <SafeAreaProvider>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Form screen" component={MainScreen} />
-      </Stack.Navigator>
+      <Connection />
     </NavigationContainer>
-  );
-};
+  </SafeAreaProvider>
+);
 
-export default MainApp;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+});
+
+export default App;

@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 import {Text, TouchableOpacity, StyleSheet} from 'react-native';
 import DatePicker from 'react-native-date-picker';
 
+export let dateData;
 const Calendar2 = () => {
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
-
+  dateData = date.toDateString();
   return (
     <>
       <TouchableOpacity
