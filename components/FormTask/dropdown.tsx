@@ -1,18 +1,22 @@
 /* eslint-disable react-native/no-inline-styles */
 import {View, Text, TouchableOpacity, FlatList, Linking} from 'react-native';
 import React, {useState} from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
 const timeperiod = [
   {names: 'Short term'},
   {names: 'Mid term'},
   {names: 'Long term'},
 ];
+
+export let selectedDuration;
 const DropDown = () => {
   const [clicked, setClicked] = useState(false);
   const [data, setData] = useState(timeperiod);
   const [selectedTimePeriod, setSelectedTimePeriod] = useState('');
+  selectedDuration = selectedTimePeriod;
 
   return (
-    <View>
+    <SafeAreaView>
       <TouchableOpacity
         style={{
           width: '100%',
@@ -74,7 +78,7 @@ const DropDown = () => {
           }}
         />
       ) : null}
-    </View>
+    </SafeAreaView>
   );
 };
 
